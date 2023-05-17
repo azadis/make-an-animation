@@ -119,17 +119,21 @@
         }
 
       .gif-container {
-        display: flex;
-        justify-content: space-between;
+        width: 100%;
       }
       .gif {
-        width: 100%;
+        width: 90%;
       }
 
       table {
-      width: 30%;
+      width: 80%;
       border-collapse: collapse;
     }
+
+    .text-overlay {
+  font-size: 80%;
+    }
+
 
 
     </style>
@@ -195,7 +199,7 @@
     <h1 class=" " style="text-align: center;">Make-An-Animation</h1>
 </div>
 
-<div class="container" style="max-width: 780px;">
+<div class="container" style="max-width: 60%">
     <div class="row authors" style="padding-bottom: 15px;">
         <div class="col-sm-4">
             <h5 class="text-center">Samaneh Azadi</h5>
@@ -213,29 +217,29 @@
             <h5 class="text-right">Sonal Gupta</h5>
         </div>
     </div>
-    <div class="w3-display-container w3-content" style="max-width: 780px; padding-bottom: 20px;">
+    <div class="w3-display-container w3-content" style="max-width: 60%; padding-bottom: 20px;">
         <h5 class="text-center" style="text-align: center;">Meta AI</h5>
     </div>
-    <div class="w3-display-container w3-content" style="max-width: 780px; padding-bottom: 20px;">
+    <div class="w3-display-container w3-content" style="max-width: 60%; padding-bottom: 20px;">
         <h4 class="text-center" style="text-align: center;"><a href="https://arxiv.org/pdf/2305.09662.pdf">[Paper]</a></h4>
     </div>
 </div>
 
 
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1000px;" id="model">
+<header class="w3-display-container w3-content w3-wide" style="max-width:60%;" id="model">
             <img class="center" style="width:100%"
             src="assets/model_arch.png" >
 </header>
 
 <!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1200px">
+<div class="w3-content w3-padding" style="max-width:65%">
 
     <!-- Abstract Section -->
     <div class="w3-container w3-padding-32">
         <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Abstract</h2>
         <p>
-            Text-guided human motion generation has drawn significant interest because of its impactful applications spanning animation and robotics. Recently, application of diffusion models for motion generation has enabled improvements in the quality of generated motions. However, existing approaches are limited by their reliance on relatively small scale motion capture data, leading to poor performance on more diverse, in-the-wild prompts. In this paper, we introduce <b>M</b>ake-<b>An</b>-<b>A</b>nimation, a text-conditioned human motion generation model which learns more diverse poses and prompts from large-scale image-text datasets, enabling significant improvement in performance over prior works. Make-An-Animation is trained in two stages. First, we train on a curated large-scale dataset of (text, static pseudo-pose) pairs extracted from image-text datasets. Second, we fine-tune on motion capture data, adding additional layers to model the temporal dimension. Unlike prior diffusion models for motion generation, Make-An-Animation uses a U-Net architecture similar to recent text-to-video generation models. Human evaluation of motion realism and alignment with input text shows that our model reaches state-of-the-art performance on text-to-motion generation.
+            Text-guided human motion generation has drawn significant interest because of its impactful applications spanning animation and robotics. Recently, application of diffusion models for motion generation has enabled improvements in the quality of generated motions. However, existing approaches are limited by their reliance on relatively small scale motion capture data, leading to poor performance on more diverse, in-the-wild prompts. In this paper, we introduce <b>M</b>ake-<b>A</b>n-<b>A</b>nimation (MAA), a text-conditioned human motion generation model which learns more diverse poses and prompts from large-scale image-text datasets, enabling significant improvement in performance over prior works. Make-An-Animation is trained in two stages. First, we train on a curated large-scale dataset of (text, static pseudo-pose) pairs extracted from image-text datasets. Second, we fine-tune on motion capture data, adding additional layers to model the temporal dimension. Unlike prior diffusion models for motion generation, Make-An-Animation uses a U-Net architecture similar to recent text-to-video generation models. Human evaluation of motion realism and alignment with input text shows that our model reaches state-of-the-art performance on text-to-motion generation.
 
         </p>
     </div>
@@ -246,512 +250,521 @@
         <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Text-to-Animated Pose</h2>
     </div>
 
-    <div id='textToAnimatedPose' class="w3-row-padding largeContainer">
-
-    </div>
 
     <p>
             *Samples rendered by an internal rendering engine.
 
         </p>
-  <table  align="center">
-    <tbody>
-      <tr>
-        <td>
-            <div class="gif-container">
+
+
+<div class="container">
+
+    <div class="row mb-4 text-center">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_dog_runs_by_and_my_avatar_pets_it_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_is_rowing_a_small_dingy_in_a_river._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_is_stretching_their_leg._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_photographer_is_looking_through_the_camera._cropped.gif" alt=""> 
             </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding-bottom: 50px;"> 
-            <div class="text-overlay">A dog runs by and my avatar pets it.</div>
-        </td>
-        <td style="padding-bottom: 50px;"> 
-            <div class="text-overlay">A person is rowing a small dingy in a river.</div>
-        </td>
-        <td style="padding-bottom: 50px;"> 
-            <div class="text-overlay">A person is stretching their leg.</div>
-        </td>
-        <td style="padding-bottom: 50px;"> 
-            <div class="text-overlay">A photographer is looking through the camera.</div>
-        </td>
-      </tr>
 
-      <tr>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A dog runs by and my avatar pets it.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person is rowing a small dingy in a river.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person is stretching their leg.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A photographer is looking through the camera.</div>
+        </div>
+
+    </div>
+
+
+<div class="row mb-4 text-center">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_is_chopping_down_a_tree_with_an_axe._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_gets_down_on_their_knee_at_their_favorite_spot_overlooking_the_ocean._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/a_person_running_and_leaping_across_rooftops._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_is_petting_a_llama_cropped.gif" alt=""> 
             </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <div class="text-overlay">A person is chopping down a tree with an axe.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A person gets down on their knee at their favorite spot overlooking the ocean.</div>
-        </td>
-        <td>
-            <div class="text-overlay">a person running and leaping across rooftops.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A person is petting a llama.</div>
-        </td>
-      </tr>
 
-      <tr>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person is chopping down a tree with an axe.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person gets down on their knee at their favorite spot overlooking the ocean.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person running and leaping across rooftops.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person is petting a llama.</div>
+        </div>
+
+    </div>
+
+
+<div class="row mb-4 text-center">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_human_excited_and_celebrating_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_ballerina_performs_a_beautiful_and_difficult_dance_on_the_roof_of_a_very_tall_skyscraper_the_city_is_lit_up_and_glowing_behind_them._cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_dancing_in_the_street_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_doing_squats_on_top_of_a_bench_in_the_park._cropped.gif" alt=""> 
             </div>
-        </td>
-      </tr>
-      <tr> 
-        <td>
-            <div class="text-overlay">A human excited and celebrating.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A ballerina performs a beautiful and difficult dance on the roof of a very tall skyscraper.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A person dancing in the street.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A person doing squats on top of a bench in the park.</div>
-        </td>
-      </tr>
 
-      <tr>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A human excited and celebrating.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A  ballerina performs a beautiful and difficult dance on the roof of a very tall skyscraper.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person dancing in the street.</div>
+        </div>
+            <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person doing squats on top of a bench in the park.</div>
+        </div>
+
+    </div>
+
+<div class="row mb-4 text-center">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_sad_human_crying_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/Me_dancing_during_a_heavy_rainstorm_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/Me_fixing_my_hair_in_front_of_a_mirror_cropped.gif" alt="">
             </div>
-        </td>
-        <td>
-            <div class="gif-container">
+            <div class="col-3 themed-grid-col">
                   <img class="gif" src="assets/rendered/public/A_person_climbing_a_ladder_on_the_side_of_a_building_cropped.gif" alt=""> 
             </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <div class="text-overlay">A sad human crying.</div>
-        </td>
-        <td>
-            <div class="text-overlay">Me dancing during a heavy rainstorm.</div>
-        </td>
-        <td>
-            <div class="text-overlay">Me fixing my hair in front of a mirror.</div>
-        </td>
-        <td>
-            <div class="text-overlay">A person climbing a ladder on the side of a building.</div>
-        </td>
-      </tr>
 
-    </tbody>
-  </table>
+            <div class="col-3 themed-grid-col">
+                <div class="text-overlay">A sad human crying.</div>
+            </div>
+                <div class="col-3 themed-grid-col">
+            <div class="text-overlay">A person dancing during a heavy rainstorm.</div>
+            </div>
+            <div class="col-3 themed-grid-col">
+                <div class="text-overlay">Me fixing my hair in front of a mirror.</div>
+            </div>
+            <div class="col-3 themed-grid-col">
+                <div class="text-overlay">A person climbing a ladder on the side of a building.</div>
+            </div>
+
+    </div>
+
+
+
+  </div>
+     
+ 
 
 
     <div class="w3-container w3-padding-32">
         <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size: 20px;">Comparison with the baselines</h2>
     </div>
 
-    <div id='Comparison with the baselines' class="w3-row-padding largeContainer">
+    <div id='Comparison with the baselines'></div>
+
+    <div class="container" >
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+        </div>
+      <div class="col-3 themed-grid-col">
+        MAA </div>
+      <div class="col-3 themed-grid-col">
+        MDM [1] </div>
+    <div class="col-3 themed-grid-col">
+        T2M [2] </div>
+    </div>
+
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A miner is digging for gold with a pickaxe.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/maa/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/mdm/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/t2m/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
+
+      </div>
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A fisher is patiently fishing in a clear blue lake.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/maa/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/mdm/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/t2m/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
     </div>
 
-  <table  align="center">
-    <tbody>
-        <thead>
-          <tr>
-            <th style="font-size: 20px;">MAA</th>
-            <th style="font-size: 20px;">MDM [1]</th>
-            <th style="font-size: 20px;">T2M [2]</th>
-          </tr>
-        </thead>
-
-
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/maa/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/mdm/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/t2m/A_miner_is_digging_for_gold_with_a_pickaxe..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A miner is digging for gold with a pickaxe.</div>
-        </td>
-      </tr>
-
-
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/maa/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/mdm/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/t2m/A_fisher_is_patiently_fishing_in_a_clear_blue_lake..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A fisher is patiently fishing in a clear blue lake.</div>
-        </td>
-      </tr>
-
-
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person doing pushups at the gym.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_doing_pushups_at_the_gym..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_doing_pushups_at_the_gym..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_doing_pushups_at_the_gym..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person doing pushups at the gym.</div>
-        </td>
-      </tr>
-    
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
-    <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+    </div>
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person extends their hand for a handshake in the classroom.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_extends_their_hand_for_a_handshake_in_the_classroom..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_extends_their_hand_for_a_handshake_in_the_classroom..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_extends_their_hand_for_a_handshake_in_the_classroom..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person extends their hand for a handshake in the classroom.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
+    </div>
 
-
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person gets down on their knee at their favorite spot overlooking the ocean.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_gets_down_on_their_knee_at_their_favorite_spot_overlooking_the_ocean..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_gets_down_on_their_knee_at_their_favorite_spot_overlooking_the_ocean..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_gets_down_on_their_knee_at_their_favorite_spot_overlooking_the_ocean..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person gets down on their knee at their favorite spot overlooking the ocean.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
+      </div>
 
-      
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person is juggling 3 balls.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_is_juggling_3_balls.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_is_juggling_3_balls.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_is_juggling_3_balls.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person is juggling 3 balls.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+
+    </div>
+
+
+
+        <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person is playing piano at a church.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_is_playing_piano_at_a_church.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_is_playing_piano_at_a_church.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_is_playing_piano_at_a_church.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person is playing piano at a church.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
 
+    </div>
 
-    <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person is praying.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_is_praying..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_is_praying..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_is_praying..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person is praying.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
 
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+    </div>
+
+
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person is sawing a branch off of a tree.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_is_sawing_a_branch_off_of_a_tree.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_is_sawing_a_branch_off_of_a_tree.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_is_sawing_a_branch_off_of_a_tree.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person is sawing a branch off of a tree.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
 
+    </div>
 
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+     <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person is smelling a flower.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_person_is_smelling_a_flower..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/A_person_is_smelling_a_flower..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/A_person_is_smelling_a_flower..mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person is smelling a flower.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
 
-      <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+    </div>
+
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A person doing jumping jacks outside on the pavement. </span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/Me_doing_jumping_jacks_outside_on_the_pavement.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/mdm/Me_doing_jumping_jacks_outside_on_the_pavement.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/t2m/Me_doing_jumping_jacks_outside_on_the_pavement.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A person doing jumping jacks outside on the pavement.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
 
-    <tr>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+
+    </div>
+
+
+    <div class="row mb-4 text-center" style="width: 100%;">
+        <div class="col-3 themed-grid-col my-auto">
+            <span class="align-middle">A dog runs by and my avatar pets it.</span>
+            
+        </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
                    src="assets/comp/maa/A_dog_runs_by_and_my_avatar_pets_it.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/mdm/A_dog_runs_by_and_my_avatar_pets_it.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-        <td>
-            <video preload="none" class="video" id="video61" loop autoplay muted playsinline
-                   src="assets/comp/t2m/A_dog_runs_by_and_my_avatar_pets_it.mp4"
-                   onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="video61Merge"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" style="padding-bottom: 15px;">
-            <div class="text-overlay">A dog runs by and my avatar pets it.</div>
-        </td>
-      </tr>
+                   onplay="resizeAndPlay(this)">      
+                   </video>
 
-    </tbody>
-  </table>
+    </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/mdm/A_dog_runs_by_and_my_avatar_pets_it.mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+
+      </div>
+      <div class="col-3 themed-grid-col">
+        <video preload="none" class="video" id="video61" loop autoplay muted playsinline
+                   src="assets/comp/t2m/A_dog_runs_by_and_my_avatar_pets_it.mp4"
+                   onplay="resizeAndPlay(this)">      
+                   </video>
+          
+      </div>
+
+
+    </div>
+
+  </div>
 
 
 
