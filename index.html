@@ -78,19 +78,22 @@
             }
 
             .div-only-mobile {
-                visibility: visible;
+                visibility: hidden;
+                display: none;
             }
         }
 
         @media screen and (max-width: 1239px) {
             .div-only-desk {
-                visibility: visible;
+                visibility: hidden;
+                display: none;
             }
 
             .div-only-mobile {
                 visibility: visible;
             }
         }
+
 
         @keyframes placeHolderShimmer {
             0% {
@@ -218,6 +221,12 @@
     </div>
 </div>
 
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1000px;" id="model">
+            <img class="center" style="width:100%"
+            src="assets/model_arch.pdf" >
+</header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1200px">
